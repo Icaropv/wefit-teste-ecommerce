@@ -1,6 +1,6 @@
 
 import type { Movie } from '../../../../types'
-import ButtonCart from '../../../../components/Button'
+import ButtonCart from '../ButtonAddToCart'
 interface MovieCardProps {
     movie: Movie
 }
@@ -8,6 +8,9 @@ interface MovieCardProps {
 
 
 const MovieCard = ({movie}: MovieCardProps) => {
+
+  const formatedPrice  = (movie.price).toFixed(2).replace('.', ','); 
+
   return (
     <div className='w-[350px] h-[390px] bg-white flex flex-col items-center justify-evenly rounded-[5px] '>
 
@@ -17,7 +20,7 @@ const MovieCard = ({movie}: MovieCardProps) => {
 
         <div className='flex flex-col items-center font-semibold'>
             <p>{movie.title}</p>
-            <p>R$ {movie.price}</p>
+            <p>R$ {formatedPrice}</p>
         </div>
 
         <div>
