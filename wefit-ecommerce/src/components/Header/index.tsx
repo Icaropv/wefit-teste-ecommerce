@@ -9,7 +9,7 @@ export function Header() {
     const itemCount = items.reduce((total, item) => total + item.quantity, 0)
 
     return(
-        <header className="flex text-white bg-[#2F2E41] justify-between p-7 h-[88px] items-center" >
+        <header className="flex text-white bg-[#2F2E41] justify-between p-7 h-[88px] items-center lg:px-50" >
             <div>
                 <Link to="/"><h1 className="text-[30px] font-semibold">WeMovies</h1></Link>
                 
