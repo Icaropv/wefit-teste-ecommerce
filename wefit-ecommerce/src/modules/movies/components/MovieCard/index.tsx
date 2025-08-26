@@ -12,7 +12,7 @@ const MovieCard = ({movie}: MovieCardProps) => {
   const formatedPrice  = (movie.price).toFixed(2).replace('.', ','); 
 
   return (
-    <div className='w-[350px] h-[390px] bg-white flex flex-col items-center justify-evenly rounded-[5px] '>
+    <div className='w-[330px] h-[390px] bg-white flex flex-col items-center justify-evenly rounded-[5px] '>
 
         <div>
             <img src={movie.image} alt="" className='h-50 '/>
