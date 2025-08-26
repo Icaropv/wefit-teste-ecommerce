@@ -20,9 +20,9 @@ Você pode acessar a aplicação em produção através do link abaixo:
 ## 📸 Preview
 
 <p align="center">
-  <img src="./preview.png" alt="Prévia da aplicação WeMovies" width="80%">
+  <img src="./src/assets/preview.png" alt="Prévia da aplicação WeMovies" width="80%">
 </p>
-*(Substitua `preview.png` por um print ou GIF da sua aplicação)*
+
 
 ## ✨ Funcionalidades
 
