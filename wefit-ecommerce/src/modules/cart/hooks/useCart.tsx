@@ -1,6 +1,8 @@
 import { create } from 'zustand';
 import type { CartItem } from '../../../types';
 import type { Movie } from '../../../types';
+import { useToast } from '../../../hooks/useToast';
+
 
 interface CartState {
   items: CartItem[];
@@ -13,11 +15,12 @@ interface CartState {
   clearCart: () => void;
 }
 
+const {showSuccess} = useToast()
+
 export const useCart = create<CartState>((set, get) => ({
   items: [],
   totalPrice: 0,
-
-
+  
 
   addMovieToCart: (movie) => {
     const { items } = get(); 
@@ -32,13 +35,18 @@ export const useCart = create<CartState>((set, get) => ({
       set({ items: updatedItems }); 
       const newTotal = updatedItems.reduce((total, item) => total + (item.price * item.quantity), 0);
       set({ totalPrice: newTotal });
+      
+      
     } else {
       const newItem: CartItem = { ...movie, quantity: 1 };
       const updatedItems = [...items, newItem];
       set({ items: updatedItems });
+      
   
       const newTotal = updatedItems.reduce((total, item) => total + (item.price * item.quantity), 0);
       set({ totalPrice: newTotal });
+      showSuccess(`${movie.title} adicionado ao carrinho`)
+      
     }
   },
 
@@ -78,6 +86,7 @@ export const useCart = create<CartState>((set, get) => ({
    
     const newTotal = updatedItems.reduce((total, item) => total + (item.price * item.quantity), 0);
     set({ items: updatedItems, totalPrice: newTotal });
+    
   },
 
   clearCart: () => {

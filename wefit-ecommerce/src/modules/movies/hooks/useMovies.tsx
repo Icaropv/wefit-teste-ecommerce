@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import type { Movie } from '../../../types'
-import { api } from '../../../services/api'
-
+import { api } from '../services/movieService'
 const useMovies = () => {
     const [movies, setMovies] = useState<Movie[]>([])
     const [isLoading, setIsLoading] = useState(true)

@@ -6,8 +6,6 @@ import successBuy from '../../assets/successBuy.png'
 
 
 const Success = () => {
-
-  
   return (
     <div className='bg-white rounded-lg shadow-md p-6 flex flex-col items-center justify-center text-center mx-auto my-8 h-[500px] w-[360px] md:w-[1150px] '>
       <div className='mb-6'>

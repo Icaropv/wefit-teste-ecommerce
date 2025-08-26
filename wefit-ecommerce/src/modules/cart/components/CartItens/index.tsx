@@ -16,7 +16,7 @@ export function CartItem({ item }: CartItemProps) {
 
     return (
         <>
-            {/* desktop */}
+            
             <div className="hidden md:flex justify-between items-center py-4  border-gray-300">
                 <div className="flex items-center w-2/5">
                     <img src={item.image} alt={item.title} className='h-[100px] w-[80px] object-cover mr-4' />
@@ -54,7 +54,7 @@ export function CartItem({ item }: CartItemProps) {
                 </div>
             </div>
             
-            {/* mobile */}
+            
             <div className="flex md:hidden  border-gray-300 py-4">
                 <img src={item.image} alt={item.title} className='h-[100px] w-[80px] object-cover mr-3' />
                 

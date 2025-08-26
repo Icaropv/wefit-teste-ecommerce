@@ -1,4 +1,6 @@
+import { useEffect, useRef } from 'react';
 import emptyImage from '../../assets/empty.png';
+import { useToast } from '../../hooks/useToast';
 import Button from '../Button';
 import { Link } from 'react-router-dom';
 
@@ -6,7 +8,22 @@ interface EmptyType {
   typeCall: "home" | "cart";
 }
 
+
 const Empty = ({ typeCall }: EmptyType) => {
+  const {showError} = useToast()
+const hasShownToast = useRef(false); 
+
+  useEffect(() => {
+    if (!hasShownToast.current) {
+      if (typeCall === 'cart') {
+        showError("Seu carrinho está vazio! ");
+      } else {
+        showError("Erro ao carregar os filmes");
+      }
+      hasShownToast.current = true; 
+    }
+  }, [typeCall, showError]);
+
   return (
     <div className='bg-white rounded-lg shadow-md p-6 flex flex-col items-center justify-center text-center mx-auto my-8 h-[500px] w-[360px] md:w-[1150px] '>
       <div className='mb-6'>
@@ -26,17 +43,21 @@ const Empty = ({ typeCall }: EmptyType) => {
       
       <div className='w-full max-w-xs flex justify-center items-center'>
         {typeCall === 'cart' ? (
+          
+          
           <Link to='/' className='flex w-full justify-center items-center'>
             <Button 
               children='VOLTAR' 
               complementalClassname='w-[200px]'
             />
           </Link>
+          
+          
         ) : (
           <Button 
             children='Recarregar página' 
             onClick={() => window.location.reload()}
-            className='w-full bg-blue-500 hover:bg-blue-600 text-white py-3 px-6 rounded-lg transition-colors font-medium'
+            complementalClassname='w-[200px]'
           />
         )}
       </div>

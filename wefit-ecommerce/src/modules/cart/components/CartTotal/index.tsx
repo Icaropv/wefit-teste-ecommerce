@@ -16,7 +16,7 @@ export function CartTotal() {
 
   return (
     <div className="mt-6 pt-4 border-t border-gray-300">
-      {/* Versão Desktop */}
+      
       <div className="hidden md:flex justify-between items-center">
      
 
