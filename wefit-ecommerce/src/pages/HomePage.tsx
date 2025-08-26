@@ -20,7 +20,7 @@ const HomePage = () => {
     
 
   return (
-    <div  className=" p-5 bg-[#2F2E41] flex justify-center  items-baseline-last">
+    <div  className=" px-4 py-8 bg-[#2F2E41] flex justify-center  items-baseline-last">
       
      <MovieGrid movies={movies}/>
      
