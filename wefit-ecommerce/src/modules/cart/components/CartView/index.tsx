@@ -7,7 +7,9 @@ export function CartView() {
   const { items } = useCart();
 
   if (items.length === 0) {
-    return <Empty typeCall='cart'/>;
+    return <div className='w-full flex justify-center items-center'>
+      <Empty typeCall='cart'/>;
+    </div>
   }
 
   return (

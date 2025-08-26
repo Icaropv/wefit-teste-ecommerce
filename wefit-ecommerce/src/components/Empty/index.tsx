@@ -25,7 +25,7 @@ const hasShownToast = useRef(false);
   }, [typeCall, showError]);
 
   return (
-    <div className='bg-white rounded-lg shadow-md p-6 flex flex-col items-center justify-center text-center mx-auto my-8 h-[500px] w-[360px] md:w-[1150px] '>
+    <div className='bg-white rounded-lg shadow-md p-6 flex flex-col items-center justify-center text-center mx-auto my-8 h-[500px] w-[340px] md:w-[1150px] '>
       <div className='mb-6'>
         <h1 className='font-semibold text-2xl md:text-3xl text-gray-800 mb-2'>
           Parece que não há nada por aqui :(

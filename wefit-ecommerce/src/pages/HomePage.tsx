@@ -11,16 +11,18 @@ const HomePage = () => {
     const {movies, isLoading, error} = useMovies()
 
     if(isLoading) {
-        return <div className=' w-full flex justify-center mt-10'><Loading/></div>
+        return <div className=' w-full flex justify-center '><Loading/></div>
     }
     
     if (error) {
-        return <Empty typeCall='home'/> 
+        return <div className='w-full flex justify-center items-center'>
+          <Empty typeCall='home'/> 
+        </div>
     }
     
 
   return (
-    <div  className=" px-4 py-8 bg-[#2F2E41] flex justify-center  items-baseline-last">
+    <div  className="  bg-[#2F2E41] flex justify-center  items-baseline-last">
       
      <MovieGrid movies={movies}/>
      

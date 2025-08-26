@@ -20,7 +20,9 @@ export function CartTotal() {
       <div className="hidden md:flex justify-between items-center">
      
 
-        <Link to='/success'><Button children='FINALIZAR PEDIDO' onClick={handleFinishOrder} complementalClassname='w-[180px]'/></Link>
+        <div className='flex justify-center items-center'>
+          <Link to='/success'><Button children='FINALIZAR PEDIDO' onClick={handleFinishOrder} complementalClassname='w-[300px]'/></Link>
+        </div>
 
         <div className="flex items-center">
           <span className="text-gray-400 font-bold mr-4">TOTAL</span>
@@ -34,8 +36,10 @@ export function CartTotal() {
           <span className="text-gray-400 font-bold">TOTAL</span>
           <span className="text-2xl font-bold text-gray-800">R$ {formattedTotal}</span>
         </div>
-        
-         <Link to='/success'><Button children='FINALIZAR PEDIDO' onClick={handleFinishOrder} complementalClassname='w-[330px]' /></Link>
+        <div className='flex justify-center items-center'>
+          
+          <Link to='/success'><Button children='FINALIZAR PEDIDO' onClick={handleFinishOrder} complementalClassname='w-[310px]' /></Link>
+        </div>
       </div>
     </div>
   );
