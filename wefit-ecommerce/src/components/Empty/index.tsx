@@ -15,10 +15,9 @@ const hasShownToast = useRef(false);
 
   useEffect(() => {
     if (!hasShownToast.current) {
-      if (typeCall === 'cart') {
-        showError("Seu carrinho está vazio! ");
-      } else {
+      if (typeCall === 'home') {
         showError("Erro ao carregar os filmes");
+        
       }
       hasShownToast.current = true; 
     }
